@@ -14,7 +14,7 @@ import FTextField from "../loginPageHookFormComponents/FTextField";
 import FormProvider from "../loginPageHookFormComponents/FormProvider";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { redirect, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import AuthContext from "../auth/AuthContext";
 
 const style = {
@@ -30,10 +30,6 @@ const style = {
 };
 
 function LoginPage() {
-  // const [open, setOpen] = React.useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
-
   const defaultValues = {
     username: "dasdasd",
     email: "duythang179@gmail.com",
@@ -43,19 +39,17 @@ function LoginPage() {
   const methods = useForm({
     defaultValues,
   });
+  const {
+    setError,
+    handleSubmit,
+
+    formState: { isSubmitting },
+  } = methods;
 
   const onSubmit = (data) => {
     console.log(data);
     setError("afterSubmit", { message: "server response error" });
   };
-
-  const {
-    reset,
-    setError,
-    handleSubmit,
-    control,
-    formState: { errors, isSubmitting },
-  } = methods;
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -97,7 +91,6 @@ function LoginPage() {
         >
           <Typography
             variant="h4"
-            component="div"
             sx={{
               color: "white",
               fontFamily: "roboto",

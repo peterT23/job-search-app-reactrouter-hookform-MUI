@@ -11,9 +11,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ErrorPage from "./pages/ErrorPage";
-import JobDisplayContainer, {
-  loader as RootLoader,
-} from "./components/JobDisplayContainer";
+import { loader as RootLoader } from "./components/JobDisplayContainer";
 import { loader as jobDetailLoader } from "./pages/DetailPage";
 
 import DetailPage from "./pages/DetailPage";

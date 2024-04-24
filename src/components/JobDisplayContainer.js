@@ -20,7 +20,7 @@ export async function loader({ request }) {
 const pageSize = 5;
 
 export default function JobDisplayContainer() {
-  const { jobs, q } = useLoaderData();
+  const { jobs } = useLoaderData();
 
   const [page, setPage] = useState(1);
 

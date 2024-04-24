@@ -12,18 +12,17 @@ import {
   useNavigate,
   useSubmit,
   useSearchParams,
-  redirect,
 } from "react-router-dom";
 import Link from "@mui/material/Link";
 
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import MenuItem from "@mui/material/MenuItem";
+
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import SearchIcon from "@mui/icons-material/Search";
 import Switch from "@mui/material/Switch";
-import { useState } from "react";
+
 import AuthContext from "../auth/AuthContext";
 
 const Search = styled("div")(({ theme }) => ({
@@ -71,7 +70,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function SearchAppBar() {
   // const [auth, setAuth] = useState(true);
 
-  const { jobs, q } = useLoaderData();
+  const { q } = useLoaderData();
 
   const auth = React.useContext(AuthContext);
   // const [anchorEl, setAnchorEl] = useState(null);
@@ -80,10 +79,12 @@ export default function SearchAppBar() {
   const submit = useSubmit();
   const [searchParams, setSearchParams] = useSearchParams();
   // const q = searchParams.get("q");
+  let k = searchParams;
   const handleChange = (event) => {
     // setAuth(event.target.checked);
 
     // setAuth(event.target.checked);
+    console.log(k);
     if (auth.user) {
       auth.signOut(() => {
         navigate("/");
@@ -153,7 +154,7 @@ export default function SearchAppBar() {
                 }}
                 control={
                   <Switch
-                    checked={auth.user ? true : false}
+                    checked={!!auth.user}
                     onChange={handleChange}
                     aria-label="login switch"
                   />
