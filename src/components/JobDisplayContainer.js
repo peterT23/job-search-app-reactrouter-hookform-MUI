@@ -51,7 +51,7 @@ export default function JobDisplayContainer() {
             <Paper
               sx={{
                 p: 2,
-                height: "280px",
+                height: "350px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
