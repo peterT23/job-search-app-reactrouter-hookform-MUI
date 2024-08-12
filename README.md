@@ -2,7 +2,8 @@
 
 Welcome to the **Job Search App**! This application is designed to help users search for jobs, apply filters, Built with React, React Router, React Hook Form, and Material-UI, the app offers a seamless and modern user experience.
 
-![Job Search App](https://jobsearchapp-reactrouter-mui-hookform.netlify.app/)
+![Job Search App](![Screenshot 2024-08-12 at 21 51 55](https://github.com/user-attachments/assets/920c68af-905a-41ab-8f51-252c9887fa84)
+)
 
 ## Features
 
